@@ -1,0 +1,12 @@
+name: 'Test JS Action'
+description: 'javascript action'
+inputs:
+  cache-key:
+    description: 'key value'
+    required: true
+outputs:
+  cache-hit:
+    description: 'was there a cache hit'
+runs:
+  using: 'node20'
+  main: 'index.js'
