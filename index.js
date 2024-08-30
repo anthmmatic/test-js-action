@@ -1,11 +1,12 @@
 const core = require('@actions/core');
 const cache = require('@actions/cache');
 
-const paths = [
-    'node_modules'
-]
-const key = core.getInput('cache-key');
-const cacheId = async () => {
+async function save() {
+    const paths = [
+        'node_modules'
+    ]
+    const key = core.getInput('cache-key');
+    
     try {
       await cache.saveCache(paths, key);
       core.info('cached successfully');
@@ -13,3 +14,5 @@ const cacheId = async () => {
       core.warning(`Failed to save cache: ${error}`);
     }
 }
+
+save();
