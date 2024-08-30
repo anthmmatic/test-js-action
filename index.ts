@@ -1,6 +1,7 @@
+import * as core from '@actions/core'
+import * as cache from '@actions/cache'
+
 async function run(): Promise<void> {
-  const core = require('@actions/core')
-  const cache = require('@actions/cache')
   try {
     const paths = [ 'node_modules' ]
     const key = core.getInput('cache-key')
