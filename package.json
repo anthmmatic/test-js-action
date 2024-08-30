@@ -2,7 +2,7 @@
   "name": "test-js-action",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "index.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
