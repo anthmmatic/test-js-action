@@ -1,18 +1,16 @@
-const core = require('@actions/core');
-const cache = require('@actions/cache');
+import * as core from '@actions/core'
+import * as cache from '@actions/cache'
 
-async function save() {
-    const paths = [
-        'node_modules'
-    ]
-    const key = core.getInput('cache-key');
-    
-    try {
-      await cache.saveCache(paths, key);
-      core.info('cached successfully');
-    } catch (error) {
-      core.warning(`Failed to save cache: ${error}`);
-    }
+async function run(): Promise<void> {
+  try {
+    const paths = [ 'node_modules' ]
+    const key = core.getInput('cache-key')
+    await cache.saveCache(key, paths)
+  } catch (error: any) {
+    // Show fail error if there is any error
+    core.error(error)
+    core.setFailed(error.message)
+  }
 }
 
-save();
+run()
