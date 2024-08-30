@@ -1,4 +1,4 @@
-async function run(): Promise<void> {
+async function run() {
   const core = require('@actions/core')
   const cache = require('@actions/cache')
   try {
