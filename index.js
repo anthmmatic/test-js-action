@@ -5,4 +5,4 @@ const paths = [
     'node_modules'
 ]
 const key = core.getInput('cache-key');
-const cacheId = await cache.saveCache(paths, key)
+const cacheId = async () => { await cache.saveCache(paths, key); }
